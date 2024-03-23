@@ -156,7 +156,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link to="/contactus" color="inherit" underline="none">
+              <Link href="/contactus" color="inherit" underline="none">
                 Startup Services
               </Link>
             </Typography>
@@ -172,7 +172,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link to="/contactus" color="inherit" underline="none">
+              <Link href="/contactus" color="inherit" underline="none">
                 Accounting & Payroll
               </Link>
             </Typography>
@@ -188,7 +188,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link to="/contactus" color="inherit" underline="none">
+              <Link href="/contactus" color="inherit" underline="none">
                 Income Tax Services
               </Link>
             </Typography>
@@ -204,7 +204,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link to="/contactus" color="inherit" underline="none">
+              <Link href="/contactus" color="inherit" underline="none">
                 GST Services
               </Link>
             </Typography>
@@ -220,7 +220,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link to="/contactus" color="inherit" underline="none">
+              <Link href="/contactus" color="inherit" underline="none">
                 Audit & Secretarial
               </Link>
             </Typography>
