@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import {
   AppBar,
   Box,
-  IconButton,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemText,
+  Toolbar,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -124,101 +125,123 @@ const Header = () => {
       </div>
 
       <AppBar position="static">
-        <Box
-          sx={{
-            width: "90%",
-            margin: "0 auto",
-            padding: "0 5%",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height: "70px",
-            backgroundColor: "#31568B",
-            color: "#ffffff",
-          }}
+        <Toolbar
+          sx={{ justifyContent: "space-between", backgroundColor: "#ffffff" }}
         >
-          <Link to="/">
-            <img src={Logo} alt="CA Logo" width={80} />
-          </Link>
-          {isDesktop ? (
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Link to="/">
+              <img src={Logo} alt="CA Logo" width={80} />
+            </Link>
             <Box
               sx={{
                 display: "flex",
-                gap: "60px",
+                flexDirection: "column",
+                ml: isDesktop ? 0.5 : 0,
               }}
             >
+              <Typography
+                variant="subtitle1"
+                sx={{ color: "#31568B", fontWeight: 600 }}
+              >
+                K&M EXPERT TAX SOLUTIONS
+              </Typography>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: 3,
+                  backgroundColor: "#31568B",
+                  borderRadius: 2,
+                  mt: "-3px",
+                }}
+              />
+              <Typography
+                variant="subtitle2"
+                sx={{ color: "#31568B", textAlign: "center", fontWeight: 600 }}
+              >
+                TAX CONSULTANT
+              </Typography>
+            </Box>
+          </Box>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <List sx={{ display: "flex" }}>
               {menuItems.map((item, index) => (
-                <Link
+                <ListItem
                   key={index}
+                  component={Link}
                   to={item.path}
-                  style={{
-                    color: "inherit",
+                  sx={{
                     textDecoration: "none",
+                    color: "#31568B",
+                    marginLeft: 2,
                   }}
                 >
-                  <Typography style={{ fontSize: "17px", fontWeight: 500 }}>
-                    {item.label}
-                  </Typography>
-                </Link>
+                  <ListItemText
+                    primary={
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          whiteSpace: "nowrap",
+                          fontSize: isDesktop ? "18px" : "14px",
+                          fontWeight: isDesktop ? 500 : 400,
+                        }}
+                      >
+                        {item.label}
+                      </Typography>
+                    }
+                  />
+                </ListItem>
               ))}
-            </Box>
-          ) : (
+            </List>
+          </Box>
+          <Box sx={{ display: { xs: "block", sm: "none" } }}>
             <IconButton
-              edge="end"
               color="inherit"
               aria-label="menu"
               onClick={toggleDrawer}
             >
-              {isDrawerOpen ? <CloseIcon /> : <MenuIcon />}
+              {isDrawerOpen ? (
+                <CloseIcon sx={{ color: "#31568B" }} />
+              ) : (
+                <MenuIcon sx={{ color: "#31568B" }} />
+              )}
             </IconButton>
-          )}
-        </Box>
-      </AppBar>
+          </Box>
+        </Toolbar>
 
-      <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
-        <List
-          sx={{
-            backgroundColor: "#0C151D",
-            color: "#ffffff",
-            width: "250px",
-            padding: "26px 0",
-            height: "100vh",
-          }}
-        >
-          <IconButton
-            color="inherit"
-            aria-label="close"
-            onClick={closeDrawer}
+        <Drawer anchor="right" open={isDrawerOpen} onClose={closeDrawer}>
+          <List
             sx={{
-              position: "absolute",
-              top: "10px",
-              right: "10px",
+              width: 250,
+              backgroundColor: "#31568B",
+              height: "100vh",
+              color: "#ffffff",
             }}
           >
-            <CloseIcon />
-          </IconButton>
-          <div
-            style={{
-              marginTop: "12px",
-            }}
-          >
+            <ListItem>
+              <Box sx={{ flexGrow: 1 }} />
+              <IconButton
+                color="inherit"
+                aria-label="close"
+                onClick={closeDrawer}
+                sx={{ marginRight: 0, marginTop: "-5px" }}
+              >
+                <CloseIcon sx={{ color: "#ffffff" }} />
+              </IconButton>
+            </ListItem>
             {menuItems.map((item, index) => (
-              <ListItem key={index} button onClick={closeDrawer}>
-                <Link
-                  to={item.path}
-                  style={{
-                    color: "inherit",
-                    textDecoration: "none",
-                    width: "100%",
-                  }}
-                >
-                  <ListItemText primary={item.label} />
-                </Link>
+              <ListItem
+                key={index}
+                button
+                component={Link}
+                to={item.path}
+                onClick={closeDrawer}
+              >
+                <ListItemText primary={item.label} />
               </ListItem>
             ))}
-          </div>
-        </List>
-      </Drawer>
+          </List>
+        </Drawer>
+      </AppBar>
     </>
   );
 };

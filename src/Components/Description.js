@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Description = () => {
   const [isDesktop, setIsDesktop] = useState(true);
@@ -83,7 +84,9 @@ const Description = () => {
             fontSize: "14px",
           }}
         >
-          Know more
+          <Link to="/contactus" style={{ textDecoration: "none", color:"#2EA3F2" }}>
+            Know more
+          </Link>
         </button>
       </div>
     </>

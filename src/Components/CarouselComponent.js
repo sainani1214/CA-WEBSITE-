@@ -221,12 +221,12 @@ const CarouselComponent = () => {
                         margin: isDesktop ? "none" : "0 auto",
                       }}
                     >
-                      <a
-                        href="/contactus"
+                      <Link
+                        to="/contactus"
                         style={{ textDecoration: "none", color: "#ffffff" }}
                       >
                         {item.content.buttonText}
-                      </a>
+                      </Link>
                     </Button>
                   </div>
                 </Box>

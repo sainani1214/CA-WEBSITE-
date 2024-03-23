@@ -156,7 +156,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link href="/contactus" color="inherit" underline="none">
+              <Link to="/contactus" color="inherit" underline="none">
                 Startup Services
               </Link>
             </Typography>
@@ -172,7 +172,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link href="/contactus" color="inherit" underline="none">
+              <Link to="/contactus" color="inherit" underline="none">
                 Accounting & Payroll
               </Link>
             </Typography>
@@ -188,7 +188,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link href="/contactus" color="inherit" underline="none">
+              <Link to="/contactus" color="inherit" underline="none">
                 Income Tax Services
               </Link>
             </Typography>
@@ -204,7 +204,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link href="/contactus" color="inherit" underline="none">
+              <Link to="/contactus" color="inherit" underline="none">
                 GST Services
               </Link>
             </Typography>
@@ -220,7 +220,7 @@ const Footer = () => {
                 display: "block",
               }}
             >
-              <Link href="/contactus" color="inherit" underline="none">
+              <Link to="/contactus" color="inherit" underline="none">
                 Audit & Secretarial
               </Link>
             </Typography>
@@ -293,6 +293,26 @@ const Footer = () => {
               style={{ color: "#ffffff", fontWeight: 700 }}
             >
               GET IN TOUCH
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              style={{
+                fontWeight: 500,
+                fontSize: "16px",
+                color: "#ffffff",
+                marginBottom: "8px",
+                display: "block",
+              }}
+            >
+              <Link
+                // href="mailto:experttaxsolutions9@gmail.com"
+                color="inherit"
+                underline="none"
+              >
+                5-2-56/1, Bhagmeer Colony, Shanthi Nagar, Near BJP Office,
+                Kukatpally, Hyderabad, Telanagna - 500072
+              </Link>
             </Typography>
             <Typography
               variant="body2"
