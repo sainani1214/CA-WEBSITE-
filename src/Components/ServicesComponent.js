@@ -211,7 +211,7 @@ const ServicesComponent = () => {
                 backgroundColor: bgColors[index % bgColors.length],
                 position: "relative",
                 height: "454px",
-                marginLeft: "-10px",
+                marginLeft: isDesktop ? "0px" : "-18px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -288,9 +288,9 @@ const ServicesComponent = () => {
                   {data.button}
                 </span>
                 <div>
-                 <Link to='/contactus'>
-                 <ChevronRightSvg />
-                 </Link>
+                  <Link to="/contactus">
+                    <ChevronRightSvg />
+                  </Link>
                 </div>
               </div>
             </div>
