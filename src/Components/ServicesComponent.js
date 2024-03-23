@@ -91,7 +91,7 @@ const ServicesComponent = () => {
     {
       heading: "Business Advisory",
       description:
-        "We at Tirumalesh & Co provide various kinds of business advisory services like Management Advisory, Share Valuation, business valuation, Due Diligence, Mergers  & Aquisitions etc.",
+        "We provide various kinds of business advisory services like Management Advisory, Share Valuation, business valuation, Due Diligence, Mergers  & Aquisitions etc.",
       button: "Business Advisory Services",
       image: businessImage,
     },
